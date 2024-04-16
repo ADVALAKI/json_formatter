@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Beautifier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JSON Beautifier</h1>
+        <div class="controls">
+            <button onclick="zoomIn()">+</button>
+            <button onclick="zoomOut()">-</button>
+            <button onclick="removeWhiteSpace()">Remove White Space</button>
+        </div>
+        <textarea id="jsonInput" placeholder="Paste your JSON here..." oninput="beautifyJson()" spellcheck="false"></textarea>
+    </div>
+    <footer>
+        <p>&copy; Alpesh Valaki | <a href="https://github.com/adVALAKI/">GitHub</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

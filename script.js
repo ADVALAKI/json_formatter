@@ -5,9 +5,10 @@ function beautifyJson() {
         var beautifiedJson = JSON.stringify(parsedJson, null, 4);
         document.getElementById('jsonInput').value = beautifiedJson;
     } catch (error) {
-        // Ignore invalid JSON input
+        alert('Invalid JSON input: ' + error.message);
     }
 }
+
 
 function zoomIn() {
     fontSize += 2; // Increase font size by 2px

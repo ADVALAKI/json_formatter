@@ -1,9 +1,29 @@
+var fontSize = 12; // Default font size
+
 function beautifyJson() {
     var jsonInput = document.getElementById('jsonInput').value;
     try {
         var parsedJson = JSON.parse(jsonInput);
         var beautifiedJson = JSON.stringify(parsedJson, null, 4);
         document.getElementById('jsonInput').value = beautifiedJson;
+    } catch (error) {
+        // Ignore invalid JSON input
+    }
+}
+
+function handleListOfDictionaries() {
+    var jsonInput = document.getElementById('jsonInput').value;
+    try {
+        var parsedJson = JSON.parse(jsonInput);
+        if (Array.isArray(parsedJson)) {
+            var beautifiedJson = '';
+            parsedJson.forEach(function(obj) {
+                beautifiedJson += JSON.stringify(obj, null, 4) + '\n';
+            });
+            document.getElementById('jsonInput').value = beautifiedJson;
+        } else {
+            // Not a list of dictionaries, do nothing
+        }
     } catch (error) {
         // Ignore invalid JSON input
     }
